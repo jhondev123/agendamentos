@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\BookingStatus;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class BookingStatusSeeder extends Seeder
@@ -15,10 +14,23 @@ class BookingStatusSeeder extends Seeder
     {
 
         BookingStatus::create([
-            ['name' => 'Pending', 'description' => 'The booking is pending'],
-            ['name' => 'Approved', 'description' => 'The booking is approved'],
-            ['name' => 'Rejected', 'description' => 'The booking is rejected'],
-            ['name' => 'Cancelled', 'description' => 'The booking is Cancelled'],
+            'name' => 'Pending',
+            'description' => 'The booking is pending',
+        ]);
+
+        BookingStatus::create([
+            'name' => 'Approved',
+            'description' => 'The booking is approved',
+        ]);
+
+        BookingStatus::create([
+            'name' => 'Rejected',
+            'description' => 'The booking is rejected',
+        ]);
+
+        BookingStatus::create([
+            'name' => 'Cancelled',
+            'description' => 'The booking is cancelled',
         ]);
     }
 }

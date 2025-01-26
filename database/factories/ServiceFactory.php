@@ -16,8 +16,14 @@ class ServiceFactory extends Factory
      */
     public function definition(): array
     {
+        $category = \App\Models\Category::factory()->create();
         return [
-            //
+            'name' => $this->faker->name,
+            'description' => $this->faker->text,
+            'price' => $this->faker->randomFloat(2, 10, 1000),
+            'duration' => $this->faker->numberBetween(15, 240),
+            'category_id' => $category->id,
+
         ];
     }
 }

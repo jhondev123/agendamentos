@@ -16,8 +16,14 @@ class BookingServiceFactory extends Factory
      */
     public function definition(): array
     {
+        $booking = \App\Models\Booking::factory()->create();
+        $service = \App\Models\Service::factory()->create();
         return [
-            //
+            'booking_id' => $booking->id,
+            'service_id' => $service->id,
+            'price' => $this->faker->randomFloat(2, 0, 1000),
+            'duration' => $this->faker->numberBetween(15, 240),
+
         ];
     }
 }

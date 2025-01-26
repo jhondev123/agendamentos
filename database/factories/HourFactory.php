@@ -17,7 +17,11 @@ class HourFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'hour' => $this->faker->time(),
+            'date' => $this->faker->date(),
+            'available' => $this->faker->boolean,
+            'day' => $this->faker->word,
+
         ];
     }
 }
