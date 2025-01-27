@@ -19,9 +19,9 @@ class BookingFactory extends Factory
         $user = \App\Models\User::factory()->create();
         return [
             'user_id' => $user->id,
-            'booking_status_id' => $this->faker->numberBetween(0, 4),
+            'booking_status_id' => $this->faker->numberBetween(1, 4),
             'total_price' => $this->faker->randomFloat(2, 0, 1000),
-            'duration' => $this->faker->numberBetween(15, 240),
+            'total_duration' => $this->faker->numberBetween(15, 240),
             'notes' => $this->faker->text,
         ];
     }
